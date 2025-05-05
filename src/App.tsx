@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import Courses from "./pages/courses/Courses";
 import CourseDetail from "./pages/courses/CourseDetail";
-import Progress from "./pages/progress/Progress";
+import ProgressPage from "./pages/progress/Progress";
 import Profile from "./pages/profile/Profile";
 import Achievements from "./pages/achievements/Achievements";
 import QASessions from "./pages/qa-sessions/QASessions";
@@ -33,7 +33,7 @@ const App = () => (
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="courses" element={<Courses />} />
             <Route path="courses/:courseId" element={<CourseDetail />} />
-            <Route path="progress" element={<Progress />} />
+            <Route path="progress" element={<ProgressPage />} />
             <Route path="achievements" element={<Achievements />} />
             <Route path="qa-sessions" element={<QASessions />} />
             <Route path="profile" element={<Profile />} />

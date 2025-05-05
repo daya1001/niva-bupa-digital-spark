@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Progress as ProgressBar } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Award, Book, Clock, CheckCircle } from 'lucide-react';
 
-const Progress = () => {
+const ProgressPage = () => {
   return (
     <div className="container mx-auto py-8">
       <div className="mb-8">
@@ -143,7 +143,7 @@ const ProgressCard = ({ title, value, icon, description }: ProgressCardProps) =>
             <span className="text-sm text-gray-500">Progress</span>
             <span className="text-sm font-medium">{value}%</span>
           </div>
-          <Progress value={value} className="h-2" />
+          <ProgressBar value={value} className="h-2" />
           
           <p className="text-sm text-gray-500">{description}</p>
         </div>
@@ -189,7 +189,7 @@ const CourseProgressItem = ({
             <span className="text-sm text-gray-500">Progress</span>
             <span className="text-sm font-medium">{progress}%</span>
           </div>
-          <Progress value={progress} className="h-2" />
+          <ProgressBar value={progress} className="h-2" />
         </div>
         
         <div className="text-sm text-gray-600 flex justify-between mb-2">
@@ -253,4 +253,4 @@ const ActivityItem = ({ type, title, course, date, score }: ActivityItemProps) =
   );
 };
 
-export default Progress;
+export default ProgressPage;
