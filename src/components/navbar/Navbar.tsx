@@ -16,9 +16,9 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/" className="text-gray-700 hover:text-nibp-blue transition-colors">Home</Link>
-          <Link to="/about" className="text-gray-700 hover:text-nibp-blue transition-colors">About</Link>
-          <Link to="/courses" className="text-gray-700 hover:text-nibp-blue transition-colors">Courses</Link>
-          <Link to="/contact" className="text-gray-700 hover:text-nibp-blue transition-colors">Contact</Link>
+          <Link to="/dashboard/courses" className="text-gray-700 hover:text-nibp-blue transition-colors">Courses</Link>
+          <Link to="/about-us" className="text-gray-700 hover:text-nibp-blue transition-colors">About</Link>
+          <Link to="/contact-us" className="text-gray-700 hover:text-nibp-blue transition-colors">Contact</Link>
           <Button 
             variant="default" 
             size="sm" 
@@ -48,21 +48,21 @@ const Navbar = () => {
               Home
             </Link>
             <Link 
-              to="/about" 
+              to="/about-us" 
               className="text-gray-700 hover:text-nibp-blue transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link 
-              to="/courses" 
+              to="/dashboard/courses" 
               className="text-gray-700 hover:text-nibp-blue transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Courses
             </Link>
             <Link 
-              to="/contact" 
+              to="/contact-us" 
               className="text-gray-700 hover:text-nibp-blue transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >

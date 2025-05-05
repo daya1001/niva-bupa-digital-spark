@@ -15,6 +15,8 @@ import Profile from "./pages/profile/Profile";
 import Achievements from "./pages/achievements/Achievements";
 import QASessions from "./pages/qa-sessions/QASessions";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/dashboard" element={<Dashboard />} />
           
           {/* Dashboard routes with shared layout */}
