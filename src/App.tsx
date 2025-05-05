@@ -8,6 +8,13 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import Courses from "./pages/courses/Courses";
+import CourseDetail from "./pages/courses/CourseDetail";
+import Progress from "./pages/progress/Progress";
+import Profile from "./pages/profile/Profile";
+import Achievements from "./pages/achievements/Achievements";
+import QASessions from "./pages/qa-sessions/QASessions";
+import DashboardLayout from "./components/dashboard/DashboardLayout";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +28,17 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          
+          {/* Dashboard routes with shared layout */}
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route path="courses" element={<Courses />} />
+            <Route path="courses/:courseId" element={<CourseDetail />} />
+            <Route path="progress" element={<Progress />} />
+            <Route path="achievements" element={<Achievements />} />
+            <Route path="qa-sessions" element={<QASessions />} />
+            <Route path="profile" element={<Profile />} />
+          </Route>
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
