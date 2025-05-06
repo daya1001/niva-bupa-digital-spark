@@ -9,7 +9,231 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      achievements: {
+        Row: {
+          certificate_url: string | null
+          course_id: string
+          id: string
+          issue_date: string
+          user_id: string
+        }
+        Insert: {
+          certificate_url?: string | null
+          course_id: string
+          id?: string
+          issue_date?: string
+          user_id: string
+        }
+        Update: {
+          certificate_url?: string | null
+          course_id?: string
+          id?: string
+          issue_date?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "achievements_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chapters: {
+        Row: {
+          course_id: string
+          created_at: string
+          description: string | null
+          duration: string
+          id: string
+          order_number: number
+          title: string
+          updated_at: string
+          video_url: string | null
+        }
+        Insert: {
+          course_id: string
+          created_at?: string
+          description?: string | null
+          duration: string
+          id?: string
+          order_number: number
+          title: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Update: {
+          course_id?: string
+          created_at?: string
+          description?: string | null
+          duration?: string
+          id?: string
+          order_number?: number
+          title?: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapters_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      courses: {
+        Row: {
+          created_at: string
+          description: string
+          duration: string
+          id: string
+          image_url: string
+          modules: number
+          title: string
+          unlocked: boolean
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          duration: string
+          id?: string
+          image_url: string
+          modules?: number
+          title: string
+          unlocked?: boolean
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          duration?: string
+          id?: string
+          image_url?: string
+          modules?: number
+          title?: string
+          unlocked?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          first_name: string | null
+          id: string
+          last_name: string | null
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      qa_sessions: {
+        Row: {
+          course_id: string | null
+          created_at: string
+          date: string
+          description: string
+          id: string
+          instructor: string
+          time: string
+          title: string
+        }
+        Insert: {
+          course_id?: string | null
+          created_at?: string
+          date: string
+          description: string
+          id?: string
+          instructor: string
+          time: string
+          title: string
+        }
+        Update: {
+          course_id?: string | null
+          created_at?: string
+          date?: string
+          description?: string
+          id?: string
+          instructor?: string
+          time?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "qa_sessions_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_progress: {
+        Row: {
+          chapter_id: string | null
+          completed: boolean
+          course_id: string
+          created_at: string
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          completed?: boolean
+          course_id: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          chapter_id?: string | null
+          completed?: boolean
+          course_id?: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_progress_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_progress_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

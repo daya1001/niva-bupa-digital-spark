@@ -14,6 +14,7 @@ import ProgressPage from "./pages/progress/Progress";
 import Profile from "./pages/profile/Profile";
 import Achievements from "./pages/achievements/Achievements";
 import QASessions from "./pages/qa-sessions/QASessions";
+import Certificates from "./pages/certificates/Certificates";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="courses/:courseId" element={<CourseDetail />} />
             <Route path="progress" element={<ProgressPage />} />
             <Route path="achievements" element={<Achievements />} />
+            <Route path="certificates" element={<Certificates />} />
             <Route path="qa-sessions" element={<QASessions />} />
             <Route path="profile" element={<Profile />} />
           </Route>
