@@ -31,10 +31,10 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           
           {/* Dashboard routes with shared layout */}
           <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
             <Route path="courses" element={<Courses />} />
             <Route path="courses/:courseId" element={<CourseDetail />} />
             <Route path="progress" element={<ProgressPage />} />
